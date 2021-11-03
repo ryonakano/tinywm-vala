@@ -8,6 +8,5 @@ executable(
         dependency('x11')
     ],
     install: true,
-    install_dir: '/usr/bin',
     link_args: ['-lX11']
 )
