@@ -1,8 +1,5 @@
 /*
  * SPDX-License-Identifier: Unlicense
- * SPDX-FileCopyrightText: 2021 Ryo Nakano <ryonakaknock3@gmail.com>
- *
- * A Vala-fork of mackstann/tinywm.
  */
 
 public static int main (string[] args) {
