@@ -6,6 +6,7 @@ A port of [TinyWM](https://github.com/mackstann/tinywm) written in Vala.
 You'll need the following dependencies to build:
 
 * libglib2.0-dev
+* libx11-dev
 * meson
 * valac
 
