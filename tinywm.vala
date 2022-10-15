@@ -9,15 +9,19 @@ public static int main (string[] args) {
     }
 
     X.Window root = dpy.default_root_window ();
-    dpy.grab_key (dpy.keysym_to_keycode (X.string_to_keysym ("F1")), X.KeyMask.Mod1Mask, root, true, X.GrabMode.Async, X.GrabMode.Async);
-    dpy.grab_button (1, X.KeyMask.Mod1Mask, root, true, X.EventMask.ButtonPressMask|X.EventMask.ButtonReleaseMask|X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint)X.None);
-    dpy.grab_button (3, X.KeyMask.Mod1Mask, root, true, X.EventMask.ButtonPressMask|X.EventMask.ButtonReleaseMask|X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint)X.None);
+    dpy.grab_key (dpy.keysym_to_keycode (X.string_to_keysym ("F1")), X.KeyMask.Mod1Mask,
+                root, true, X.GrabMode.Async, X.GrabMode.Async);
+    dpy.grab_button (1, X.KeyMask.Mod1Mask, root, true,
+                X.EventMask.ButtonPressMask|X.EventMask.ButtonReleaseMask|X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
+    dpy.grab_button (3, X.KeyMask.Mod1Mask, root, true,
+                X.EventMask.ButtonPressMask|X.EventMask.ButtonReleaseMask|X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
 
     var attr = X.WindowAttributes ();
-    var start = X.ButtonEvent ();
+    var start = X.ButtonEvent () {
+        subwindow = X.None
+    };
     var ev = X.Event ();
-    start.subwindow = X.None;
-    while (true) {
+    for (;;) {
         dpy.next_event (ref ev);
         switch (ev.type) {
             case X.EventType.KeyPress:
