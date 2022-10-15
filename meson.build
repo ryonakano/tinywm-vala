@@ -1,5 +1,7 @@
 project('tinywm-vala', 'vala', 'c')
 
+add_project_arguments('--debug', language: 'vala')
+
 executable(
     meson.project_name(),
     'tinywm.vala',
