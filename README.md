@@ -10,6 +10,10 @@ You'll need the following dependencies to build:
 * meson
 * valac
 
+You may need the following dependencies to run:
+
+* xterm
+
 Build & install with:
 
     meson build --prefix=/usr
