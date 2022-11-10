@@ -12,9 +12,9 @@ public static int main (string[] args) {
     dpy.grab_key (dpy.keysym_to_keycode (X.string_to_keysym ("F1")), X.KeyMask.Mod1Mask,
                 root, true, X.GrabMode.Async, X.GrabMode.Async);
     dpy.grab_button (1, X.KeyMask.Mod1Mask, root, true,
-                X.EventMask.ButtonPressMask|X.EventMask.ButtonReleaseMask|X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
+                X.EventMask.ButtonPressMask | X.EventMask.ButtonReleaseMask | X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
     dpy.grab_button (3, X.KeyMask.Mod1Mask, root, true,
-                X.EventMask.ButtonPressMask|X.EventMask.ButtonReleaseMask|X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
+                X.EventMask.ButtonPressMask | X.EventMask.ButtonReleaseMask | X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
 
     var attr = X.WindowAttributes ();
     var start = X.ButtonEvent () {
