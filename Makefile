@@ -1,21 +1,8 @@
-VC=valac
-PROGRAM=tinywm-vala
-SRC=tinywm.vala
+VALAC?=valac
+VALAFLAGS?=-X -Os -X -pedantic -X -Wall
 
-$(PROGRAM): $(SRC)
-	$(VC) --debug -o $(PROGRAM) --pkg glib-2.0 --pkg x11 $^
+all:
+	$(VALAC) $(VALAFLAGS) tinywm.vala --pkg glib-2.0 --pkg x11 -o tinywm-vala
 
-.PHONY: all
-all: clean $(PROGRAM)
-
-.PHONY: install
-install:
-	cp $(PROGRAM) /usr/bin
-
-.PHONY: uninstall
-uninstall:
-	$(RM) /usr/bin/$(PROGRAM)
-
-.PHONY: clean
 clean:
-	$(RM) $(PROGRAM)
+	rm -f tinywm-vala
