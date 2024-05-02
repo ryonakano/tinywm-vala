@@ -18,7 +18,7 @@ Build with meson:
 
 ```bash
 meson setup builddir
-ninja -C builddir
+meson compile -C builddir
 ```
 
 Alternatively build with make:
