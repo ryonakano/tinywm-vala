@@ -44,8 +44,8 @@ public static int main (string[] args) {
                     dpy.move_resize_window (start.subwindow,
                         attr.x + (start.button == 1 ? xdiff : 0),
                         attr.y + (start.button == 1 ? ydiff : 0),
-                        uint.max (1, attr.width + (start.button == 3 ? xdiff : 0)),
-                        uint.max (1, attr.height + (start.button == 3 ? ydiff : 0))
+                        int.max (1, attr.width + (start.button == 3 ? xdiff : 0)),
+                        int.max (1, attr.height + (start.button == 3 ? ydiff : 0))
                     );
                 }
 
