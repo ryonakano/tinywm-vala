@@ -2,18 +2,17 @@
  * SPDX-License-Identifier: Unlicense
  */
 
-public static int main (string[] args) {
+public static int main () {
     var dpy = new X.Display ();
     if (dpy == null) {
         return 1;
     }
 
-    X.Window root = dpy.default_root_window ();
     dpy.grab_key (dpy.keysym_to_keycode (X.string_to_keysym ("F1")), X.KeyMask.Mod1Mask,
-                root, true, X.GrabMode.Async, X.GrabMode.Async);
-    dpy.grab_button (1, X.KeyMask.Mod1Mask, root, true,
+                dpy.default_root_window (), true, X.GrabMode.Async, X.GrabMode.Async);
+    dpy.grab_button (1, X.KeyMask.Mod1Mask, dpy.default_root_window (), true,
                 X.EventMask.ButtonPressMask | X.EventMask.ButtonReleaseMask | X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
-    dpy.grab_button (3, X.KeyMask.Mod1Mask, root, true,
+    dpy.grab_button (3, X.KeyMask.Mod1Mask, dpy.default_root_window (), true,
                 X.EventMask.ButtonPressMask | X.EventMask.ButtonReleaseMask | X.EventMask.PointerMotionMask, X.GrabMode.Async, X.GrabMode.Async, X.None, (uint) X.None);
 
     var attr = X.WindowAttributes ();
