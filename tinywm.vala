@@ -20,7 +20,7 @@ public static int main () {
         subwindow = X.None
     };
     var ev = X.Event ();
-    for (;;) {
+    while (true) {
         dpy.next_event (ref ev);
         switch (ev.type) {
             case X.EventType.KeyPress:
